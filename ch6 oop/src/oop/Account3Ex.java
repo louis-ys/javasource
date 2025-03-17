@@ -90,23 +90,39 @@ public class Account3Ex {
         System.out.println("계좌번호 : ");
         String ano = sc.nextLine();
         for (int i = 0; i < account.length; i++) {
-            if (account[i] != null) {
-                if (ano == account[i].getAno()) {
-                    System.out.print("예금액 : ");
-                    int balance = Integer.parseInt(sc.nextLine());
-                    account[i].deposit(balance);
-                }
+            if (account[i] != null && ano.equals(account[i].getAno())) {
+                System.out.print("예금액 : ");
+                int balance = Integer.parseInt(sc.nextLine());
+                account[i].deposit(balance);
             }
-        }
 
+        }
     }
 
     private static void withdraw() {
-        return;
+        System.out.println("계좌번호 : ");
+        String ano = sc.nextLine();
+        for (int i = 0; i < account.length; i++) {
+            if (account[i] != null && account[i].getAno().equals(ano)) {
+                System.out.print("출금액 : ");
+                int balance = Integer.parseInt(sc.nextLine());
+                account[i].withdraw(balance);
 
+            }
+        }
     }
 
-    // private static Account findAccount() {
+    private static Account findAccount() {
 
-    // }
+        System.out.println("계좌번호 : ");
+        String ano = sc.nextLine();
+        for (int i = 0; i < account.length; i++) {
+            if (account[i] != null && account[i].getAno().equals(ano)) {
+                return account[i];
+            }
+
+        }
+        return null;
+        // }
+    }
 }
