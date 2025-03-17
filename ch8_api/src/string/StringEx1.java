@@ -1,0 +1,28 @@
+package string;
+
+public class StringEx1 {
+    public static void main(String[] args) {
+
+        String str1 = new String("안녕하세요");
+        String str4 = new String("안녕하세요");
+        String str2 = "안녕하세요";
+        String str3 = "안녕하세요";
+
+        char[] charr = { 'h', 's', 'd' };
+        String str5 = new String(charr);
+        System.out.println("str5" + str5);
+
+        System.out.println(str1 == str4);
+        System.out.println(str2 == str3);
+
+        // 문자열 비교 : equals()
+
+        System.out.println(str1.equals(str3));
+
+        str1 = "";
+        System.out.println(str1.length());
+        str2 = null;
+        System.out.println(str2.length());
+    }
+
+}

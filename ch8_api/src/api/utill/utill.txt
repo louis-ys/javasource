@@ -1,0 +1,76 @@
+ java.utll
+ 
+ import 구문 필요
+
+
+ StringTokenizer 클래스
+ 문자열을 지정된 구분자로 분리
+  구분자로 사용할수 있는 문자는 단 한문자만 가능 
+
+   date 클래스 
+  현재 시스템 날짜 , 시간 처리 
+  +SimpleDateFormat
+
+  Time 
+  -java.Time 패키지
+  날짜와 시간을 다루는데 필요한 핵심 클래스 제공
+  날짜, 시간 +,- 메소드 제공 
+
+
+   컬렉션 프레임워크
+   -데이터를 담는 다양한 방법에 대한 클래스 모음
+ jvaa.utill.collection 
+1. List : 배열과 같은 개념 
+      ㄴ 순서대로 담기
+        - 구현 클래스 : ArrayList,LinkedList,Stack,Queue
+        -ArrayList  : 배열
+        -LinkedList : 리스트를 링크로 연결
+        - 순차적으로 추가/ 삭제 : ArrayList가 LinkedLis보다 빠르다 (단 ArrayList. 저장 공간 확보 핋요)
+        - 중간데이터를 추가  / 삭제 : LinkedList가 ArrayList보다 빠르다  
+         - Stack : LIFO(Last in First Out) - 수식계산,undo /redo, 브라우저 뒤로/앞으로
+        - Queue : FIFO(First In First Out) - 버퍼, 최근사용문서
+
+
+
+2 set : 중복된 요소를 저장하지 않음
+ - 순서를 유지하지 않음
+ - equals() + HashCode() : ture 이면 중복된 요소로 처리
+ - HashSet : 해싱 적용
+ - LinkedHashSet : 순서유지 + 중복된 요소 저장 X 
+ - TreeSet : 중복된 요소 허용안함 + 정렬 
+
+
+-collection 자식 아님 
+3) Map 
+-K(Key),V(Value) 구조 사용
+-K만 중복된 요소 검증 
+-HashMap
+-TreeMap
+
+4)Iterator
+- 컬랙션에 저장된 요소들을 읽어온는 방법에 대한 표준화
+- List,set 데이터를 읽어오는 방법과 Map 데이터를 읽어오는 방법이 서로 다름
+- hasNext(), next(), remove()
+
+5)Arrays 
+- 배열과 관련된 유용한 메소드 제공
+-Arrays.toString(args) :배열을 리스트로 변환
+-정렬 : Arrays.sort(기본타입배열) - 오름차순
+      : Arrays.sort(객체타입배열,정렬조건) 
+      1)Comparator.reverseOrder(): 내림차순
+      2)Comparator.naturalOrder(): 오름차순
+      -검색
+      1) 순차 검색 : 배열 첫번쟤 요소부터 하나씩 검색
+      2) 이진검색 : 정렬된 데이터에서 범위를 반복적으로 줄여가면서 검색
+
+      -배열 비교 : Arrays.equals(배열1,배열2)
+
+6) Comparator와 Comparable
+   -인터페이스임, 부모 역할
+   -Comparator : 기본 정렬기준 외에 다른 기준으로 정렬하고자 할때 사용 
+   -Comparable : 기본 정렬 기준을 구현하는데 사용
+
+
+
+
+ 

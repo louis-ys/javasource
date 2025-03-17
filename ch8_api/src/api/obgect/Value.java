@@ -1,0 +1,23 @@
+package api.obgect;
+
+public class Value {
+    int value;
+
+    public Value(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Value v = (Value) obj;
+
+        return this.value == v.value;
+    }
+
+    @Override
+    public String toString() {
+        return value + "";
+    }
+    // toString() : 멤버 변수 값 출력 용도로 재정의
+
+}

@@ -16,33 +16,30 @@ package op;
 
 public class LogicalEx1 {
     public static void main(String[] args) {
-        int x =0;
+        int x = 0;
         char ch = ' ';
         x = 15;
         System.out.printf("x=%2d, 10 < x && x < 20 = %b\n", x, 10 < x && x < 20);
-        
-        x =6; 
-        System.out.printf("x=%2d, x %% 2==0 || x%%6!=0 =  %b\n", x, (x % 2==0 || x %3==0) && x%6!=0);
-        
+
+        x = 6;
+        System.out.printf("x=%2d, x %% 2==0 || x%%6!=0 =  %b\n", x, (x % 2 == 0 || x % 3 == 0) && x % 6 != 0);
+
         ch = '1';
-        //  0~9 :  사이 숫자인지 확인
+        // 0~9 : 사이 숫자인지 확인
         System.out.printf("ch=%c, '0' <= ch && ch <= '9'= %b\n", ch, '0' <= ch && ch <= '9');
-        
-        
+
         ch = 'a';
         // 소문자 인지 확인
         System.out.printf("ch=%c, 'a' <= ch && ch <= 'z'= %b\n", ch, 'a' <= ch && ch <= 'z');
-        
-        
+
         ch = 'A';
         // 대문자인지 확인
         System.out.printf("ch=%c, 'A' <= ch && ch <= 'Z'= %b\n", ch, 'A' <= ch && ch <= 'Z');
-        
-        
+
         ch = 'q';
         // 소문자 q 이거나 대문자 Q인지 확인
-        System.out.printf("ch=%c, ch=='q' || ch 'Q'= %b\n", ch, ch=='q' || ch <= 'Q');
+        System.out.printf("ch=%c, ch=='q' || ch 'Q'= %b\n", ch, ch == 'q' || ch <= 'Q');
 
     }
-    
+
 }

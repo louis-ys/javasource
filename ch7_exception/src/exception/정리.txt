@@ -1,0 +1,29 @@
+exception(예외)
+발생시점
+- 1.  컴파일 애러 : 컴파일 시에 발생하는 애러 
+- 2.  런타임 애러 : 실행 시에 발생하는 애러 
+(1) error : 메모리 부족, 스택오버플로우
+(2) exception : 수습 가능
+
+         Object 
+            |
+            |
+       Throwable
+            |
+      |------------|
+exception          Error
+  |- IOException
+  |- classNotFoundException
+  |- RuntimeException
+        |-- ArithmeticException
+        |-- NullPointerException
+
+
+exception 처리 
+try ~ cacth 문
+
+try{
+    예외가 발생할 가능성이 있는 문장
+}cacth(exception ex){
+    exception 발생시 처리하기 위한 문장
+}
