@@ -1,5 +1,13 @@
 package oop;
 
+import java.beans.Transient;
+
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@ToString
+@NoArgsConstructor
+
 public class Account {
 
     // 속성 : 계좌번호(ano), 계좌명(owner), 잔액(balance)
@@ -11,44 +19,45 @@ public class Account {
     private String owner;
     private long balance;
 
-    public String getAno() {
-        return ano;
-    }
+    // public String getAno() {
+    // return ano;
+    // }
 
-    public String getOwner() {
-        return owner;
-    }
+    // public String getOwner() {
+    // return owner;
+    // }
 
-    public long getBalance() {
-        return balance;
-    }
+    // public long getBalance() {
+    // return balance;
+    // }
 
-    @Override
-    public String toString() {
-        return "Account [ano=" + ano + ", owner=" + owner + ", balance=" + balance + "]";
-    }
+    // @Override
+    // public String toString() {
+    // return "Account [ano=" + ano + ", owner=" + owner + ", balance=" + balance +
+    // "]";
+    // }
 
-    public Account() {
-    }
+    // public Account() {
+    // }
 
-    public Account(String ano, String owner, long balance) {
-        this.ano = ano;
-        this.owner = owner;
-        this.balance = balance;
-    }
+    // public Account(String ano, String owner, long balance) {
+    // this.ano = ano;
+    // this.owner = owner;
+    // this.balance = balance;
+    // }
 
-    void deposit(long amount) {
-        this.balance += amount;
+    // void deposit(long amount) {
+    // this.balance += amount;
 
-    }
+    // }
 
-    void withdraw(long amount) {
-        if (amount > balance)
-            return;
+    // void withdraw(long amount) {
+    // if (amount > balance)
+    // return;
 
-        // 인출액이 잔액보다 큰지 작은지 확인
-        this.balance -= amount;
+    // // 인출액이 잔액보다 큰지 작은지 확인
+    // this.balance -= amount;
 
-    }
+    // }
 
 }
