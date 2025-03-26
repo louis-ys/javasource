@@ -1,0 +1,84 @@
+package select;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+import java.util.concurrent.locks.Condition;
+
+public class SelectEx4 {
+    public static void main(String[] args) {
+        // 드라이버 로드
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null; // select 문 결과 담는 객체
+
+        Scanner sc = new Scanner(System.in);
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            // connection 객체 생성
+            // jdbc:oracle:thin => Oracle 연결문자열
+            // @ , localhost => 내 컴퓨터 (= 127.0.0.1)
+            // 1521 => 오라클 서버 포트번호
+            // xe => 오라클 DB명
+            String url = "jdbc:oracle:thin:@localhost:1521:xe";
+            String user = "scott";
+            String password = "tiger";
+
+            con = DriverManager.getConnection(url, user, password);
+
+            if (con != null) {
+                // System.out.println("연결되었습니다.");
+
+                // System.out.println("조회할 사원번호 입력 :");
+                // int empno = Integer.parseInt((sc.nextLine()));
+
+                // emp테이블 조회
+                String sql = "select e.EMPNO, e.DEPTNO, e.SAL, d.DNAME, d.LOC ";
+                sql += "FROM EMP e, DEPT d ";
+                sql += "WHERE e.DEPTNO = d.DEPTNO AND e.SAL <= AND e.EMPNO <=9999";
+
+                // Statement 객체 생성
+                pstmt = con.prepareStatement(sql);
+                // pstmt.setInt(1, empno);
+                // Query 수행
+                rs = pstmt.executeQuery();
+                // ResultSet 객체로부터 데이터 추출
+                while (rs.next()) {
+                    // number => int
+                    int empno = rs.getInt(1);
+                    int deptno = rs.getInt("deptno");
+                    int sal = rs.getInt("sal");
+                    String dname = rs.getString("dname");
+                    String loc = rs.getString("loc");
+                    // varchar => String
+                    // String ename = rs.getString("ename");
+                    // String job = rs.getString("job");
+                    // int mgr = rs.getInt("mgr");
+                    // String hireDate = rs.getString("hireDate");
+                    // int comm = rs.getInt("comm");
+
+                    System.out.printf("%d %s %s %s %s\n", empno, deptno, sal, dname, loc);
+
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+                pstmt.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+}
